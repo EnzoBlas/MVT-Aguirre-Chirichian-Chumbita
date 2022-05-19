@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from MTV.views import new_relative, my_family
+from MTV.views import new_relative, my_family, index
 
 urlpatterns = [
+    path('', index),
     path('admin/', admin.site.urls),
     path('family/', my_family),
     path('relative/<str:name>/<str:last_name>/<str:date_of_birth>', new_relative)
